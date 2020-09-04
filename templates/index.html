@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PongRealTime</title>
+        <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script type = "text/javascript" src = "{{ url_for ('static', filename='js/main.js') }}"></script>
+        <style>
+            div{
+                position: absolute;
+                right: 100px;
+                top:100px;
+                font-size: 100px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas width = "{{ game_constants['CANVAS_WIDTH'] }}" height = "{{ game_constants['CANVAS_HEIGHT'] }}" style = "border:1px solid black" id = "canvas"
+         data-game_constants = "{{ game_constants }}">
+            HTML 5 Canvas not supported in this browser version. Please update
+        </canvas>
+        <div>
+            {{ points1 }}:{{ points2 }}
+        </div>
+    </body>
+</html>
